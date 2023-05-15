@@ -243,17 +243,20 @@ Four types of functions
 		 |
 	And "without return"
 
+
 	2. function "with    arguments" 
 				|
 	void gotoLocation(int longitude, int latitude)
 	 |
 But "without return"
 
+
 	3. function "with    arguments" 
 				|	
 	float findAverage(int x, int y, int z)
 	|
 And "with    return"
+
 
 
 	4. function 		"without arguments" 
@@ -294,12 +297,148 @@ passed by reference
 
 
 
+	Bird Eye View Of Java Technology
+
+
+			Java Technology
+			   |
+	-----------------------------------------
+	|		   |			|
+	JSE		  JEE			JME(android)
+	|		   |	
+    standard		enterprise
+    desktop 			|
+    applications	  ---------------
+    Core Java		  |		|
+Simple Java Program	  Web		EJB - IBM WebSphere (WAS)/ Oracle WebLogic
+4 functions		Servlets	|	 DB
+Data Types		JSP	------------------|--------------------
+OOPS Concepts			|Spring		| |		|
+Packages			Session		Entity		Message (JMS|Kafka)
+Exception Handling		|sbi.com	  (Hibernate)	SMS|Mail
+				|airindia.com
+Multithreading		---------------------
+Generics 		|		|
+ Collection f/w		Stateless	Stateful
+File handling - i/o
+JDBC - insert /update/delete
+ select/function/procedure
+
+
+
+
+
+enterprise
+----------------
+1
+2
+3
+4
+5
+6
+7
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+  1. Abstraction
+  2. Encapsulation
+  3. Polymorphism
+  4. Inheritance
+  5. Object communication
+
+  Association 
+  isA hasA usesA producesA
+
+   class Machine
+	   |isA
+ class ATMMachine extends Machine
+ {
+      CardReader crdReader = new CardReader(); //hasA
+
+	//producesA	 //usesA
+	Statement     withdraw(ATMCard crd, float amt) {
+
+	}	
+
+ }
+
+  
+  class Animal { }
+  class Mammal extends Animal
+  {
+  }
+  class Human extends Mammal
+  {
+      Heart theHeart = new Heart(); //hasA
+      Brain  left  = new Brain();
+      Brain  right = new Brain();
+      Lung lung1 = new Lung();
+      Lung lung2 = new Lung();
+	Kidney k1 = new Kidney();
+
+  }
+
+
+
+
+
+
+
+			Data Types
+			   |
+		--------------------------------
+		|			|
+		Primitive		Secondary
+		|				|
+---------------------------------		--------------
+|	  |  	    |		|		|
+Integral Floating  Character	Boolean		String
+|	  |		|	 |		|
+byte  1  float 4     char 2	boolean 1     "text is here" 
+short 2  double 8
+int   4
+long  8
+
+
+	1 byte = 8 bits
+
+		1 bit = 0
+			1
+
+		2 bits = 
+			0 0
+			0 1
+			1 0 
+			1 1
+
+		3 bits
+
+			0 0 0	0
+			0 0 1	1
+			0 1 0	2
+			0 1 1 	3
+			1 0 0	4
+			1 0 1	5
+			1 1 0	6
+			1 1 1	7
+
+		4 = 16
+		5 = 32
+		6 = 64
+		7 = 128
+		8 = 256
 
 
 
