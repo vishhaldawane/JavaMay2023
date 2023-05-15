@@ -1,0 +1,279 @@
+
+				who
+				|??????
+			---------------------
+			|		|
+			where		when
+			|space		|time - 15 May 2023
+		-----------------------------------
+		|		|		|
+		why		what		how(wow)
+		|reason		|inFORMation	|implementation
+				|Knowledge	| (apply)
+						     |Wisdom
+						-------------
+						|	   |	
+						success<--feedback				
+	1994 - James Gosling
+			Green Project
+				|
+			-------------------
+			|
+			gadget
+
+
+	Fridge	Ovan	Camera	Fan
+	|	|	|	|
+	layer	layer	layer	layer
+	|	|	|	|
+	app	app	app	app
+
+
+	
+	CD-Player1	CD-Player2
+	| Sony		|Hitachi
+	|				
+	CD	
+
+
+
+	
+
+	
+	2023
+
+	
+		brand	set of instructions
+		|	|
+		Java Programming Language
+					|
+			--------------------------------
+			|	|	|	|
+			listen speak   read    writing
+			->	->	->	->
+
+		V	A	K	O	G
+		|	|	|	|	|
+		eye    ear	skin	nose   tounge
+		|	|	  |	|	|
+		visual listening  skin  smell	taste
+
+
+
+
+							M1Chip
+H/w	X86			SPARC	      hpseries  PowerPc	BB	any
+Vendor	Intel			Sun/Oracle	HP	Apple	IBM	any
+OS	Windows			Solaris		HPUX	Mac	AIX	Linux
+	|			|		|	|	|	|
+	#include		#include	
+	calc.cpp <--logic ---> calc.cpp	-->	->	->	->	->
+	|			|		|	|	|	|
+	turboc/VC++		cc		cc	cc	cc	gcc/g++
+	|			|		|	|	|	|
+compile calc.obj		calc.o		calc.o	calc.o	calc.o	calc.o
+	|			|		|	|	|	|
+link	calc.exe ---------------calc.out   calc.out calc.out  calc.out calc.out
+	|			|		|	|	|	 |
+runit	calc		  ./calc.out   ./calc.out ./calc.out  ./calc.out ./calc.out
+
+
+H/w	X86			SPARC	      hpseries  PowerPc	BB	any	new
+Vendor	Intel			Sun/Oracle	HP	Apple	IBM	any	new
+OS	Windows			Solaris		HPUX	Mac	AIX	Linux	new
+	|			|		|	|	|	|
+	calc.java		|		|	|	|	|
+	|			|		|	|	|	|
+	JVM/JRE			JRE		JRE	JRE	JRE	JRE	JRE
+	|			|		|	|	|	|
+compile calc.class		|		|	|	|	|
+	  |			|		|	|	|	|
+interpret calc.class		->		->	->	->	->
+
+	Write Once Run Anywhere
+
+
+
+
+
+-------------------------------------------
+	.java (file must have .java as an extension)
+
+
+	First.java
+	|
+	javac First.java <--- compile it
+	|
+	you would get a .class file(s)!!!
+	|
+	well what would be the name(s) of that/these file
+that depends upon the "class(es) declared" in the .java file
+
+
+
+
+	First.java
+	----------------------
+	class A
+	{
+	}
+	class B { }
+	class C { }
+
+	why do we write a class in java
+
+	- the fundamental unit of programming in JPL
+		is to write a class
+
+	- highly structured language
+
+	----------------
+	javac First.java
+	|
+	A.class | B.class | C.class files are generated
+
+	Which one to run?????
+
+	the class which has main() method is eligible to run
+
+
+	each class can have its own main, 
+
+	how to run???
+
+	java ClassName (without extension)
+
+	java Magician
+	
+
+
+classname cannot have spaces
+first letter must be in capital case
+function name first letter must be small
+
+
+Naming Conventions
+
+
+ClassName	-	SavingsAccount
+			DriverManager
+			FixedDepositAccount
+
+functionName	-	fundTransfer() { }
+			setLookAndFeel() { }
+			calculateRateOfInterest() { }			
+
+fieldnames	-	rollNumber
+variablenames		accountNumber
+			rateOfInterest
+
+CONSTANTS		PI=3.14
+			SPEED_OF_LIGHT=186000.519   miles/sec
+			MAX_RATE_OF_INTEREST
+			MIN_RATE_OF_INTEREST
+
+package names		java.awt.event.*
+			java.lang.*
+			com.sbi.myproject.*
+
+		C:
+		|
+	------------------
+	|
+	myfiles
+	|
+	com
+	|
+	sbi
+	|
+	myproject
+
+
+
+
+
+
+
+
+
+
+  class is a  blueprint	of the object
+	|
+	Fruit	mango; <-- object is the instance of a class
+	Fruit	jackfruit;
+	Fruit   apple;
+	|
+	color
+	size
+	shape
+	cost
+	weight
+
+
+
+
+
+----------------------------------------
+
+
+Functions are of FOUR types
+
+	- purpose of a function
+	- perform a particular task
+	- repeat it
+
+	void dance()
+	{
+	}
+	void withdraw()
+	{
+	}
+
+	returnType  functionName(argument list)
+	{
+		code to do
+		return returnAValue;
+	}
+
+	1. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
