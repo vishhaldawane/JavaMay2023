@@ -235,7 +235,34 @@ Functions are of FOUR types
 		return returnAValue;
 	}
 
-	1. 
+Four types of functions
+
+	1. function "without arguments" 
+				 |
+		void clearScreen(|)
+		 |
+	And "without return"
+
+	2. function "with    arguments" 
+				|
+	void gotoLocation(int longitude, int latitude)
+	 |
+But "without return"
+
+	3. function "with    arguments" 
+				|	
+	float findAverage(int x, int y, int z)
+	|
+And "with    return"
+
+
+	4. function 		"without arguments" 
+					        |
+	float findTheDistanceBetweenSunAndEarth(|) 
+	|
+But "with    return"
+
+	
 
 
 
@@ -243,6 +270,10 @@ Functions are of FOUR types
 
 
 
+
+passed by value
+passed by address
+passed by reference
 
 
 
