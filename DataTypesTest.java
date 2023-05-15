@@ -24,7 +24,33 @@ public class DataTypesTest {
 		System.out.println("Long          : "+internationalUniversityNumber);
 		System.out.println("Size of long  : "+Long.SIZE);
 		System.out.println("---------------");
+		System.out.println("Float         : "+simpleInterest);
+		System.out.println("Size of Float : "+Float.SIZE);
+		System.out.println("---------------");
+		System.out.println("Double        : "+internationalUniversityNumber);
+		System.out.println("Size of Double: "+Double.SIZE);
+		System.out.println("---------------");
 		
+		String city="Belapur";
+		String bankName="State Bank Of India";
+		
+		System.out.println("City     : "+city);
+		System.out.println("BankName : "+bankName);
+		String address = bankName +" is at "+city;
+		System.out.println("address  : "+address);
+		
+		boolean isMarried=true; //1 or 0
+		
+		if(isMarried)
+			System.out.println("Yes im married");
+		else
+			System.out.println("No, im NOT married");
+		
+		char alpha='Y'; //single letter in single quotes
+			//ASCII = 8 bits but UNICODE is 16 bits 
+		
+		System.out.println("alphabet is  : "+alpha);
+		System.out.println("Size of char : "+Character.SIZE);
 		
 		
 	}
