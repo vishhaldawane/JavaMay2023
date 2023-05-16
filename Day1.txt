@@ -692,7 +692,7 @@ FixedDepositAccount
 		}
 
 		Point
-		|
+		|isA
 		Point3D
 	
 
@@ -738,11 +738,70 @@ FixedDepositAccount
 
 
 
+	4 types of functions based on arguments/return type
+		
+			Association
+			     |
+		---------------------------
+		|	|	|	|
+		isA	hasA	usesA	producesA
 
+		Four types of Functions
+			|
+	-------------------------------------------------
+	|1		|2		|3		|4
+	exclusive	inherited	overridden	implemented
 
+	interface Photography {
+		void zoomIn();
+		void zoomOut();
+	}
+	interface Eating {
+		void eat();
+	}
+	class Person implements Eating {
+		void eat() { }
+	}
+	class Photographer extends Person implements Photography
+	{
+		void click() { }//exclusive 1	
+		public void zoomIn() { } //4
+		public void zoomOut() { } //4
+	}
+	interface Shooting {
+		void record();
+	}
+	class Cinematographer extends Photographer implements Shooting
+	{
+		//click() 2 - is now inherited here - by default
+		void shooting() {//1
+		}
 
+		void click() { //3
 
+		}
+		void record() { //4 
 
+		}	
+	}
+	
+
+		
+
+		Eating
+		|eat();
+		|
+		Person
+		|
+	--------------------------------------------
+	|					|
+	|	 Photography			Student
+	|	  |zoomIn(); zoomOut();		|
+	|	  |				Employee
+	Photographer
+		|	Shooting
+		|	   |
+		Cinematographer
 
 
 
