@@ -804,6 +804,57 @@ FixedDepositAccount
 		Cinematographer
 
 
+	Passing Object as an argument to a function
+	Returning Object as a return value from a function
+
+
+	isA  - aggregation
+
+		Person
+		| hasA PanCard
+		| hasA AdhaarCard
+		| hasA VotingCard
+		|
+		Student
+		| hasA MarkSheet(s)
+		| hasA IdCard
+		|
+		Employee
+		  hasA SalarySlip
+
+
+	hasA - composition
+
+
+
+
+
+
+
+		Stack			Heap
+		- call by value 
+		changePersonalDetails(person1); // 100
+
+					gender 	age	name
+					-----------------------
+					|M	|23	|Jack |
+					-----------------------
+		+--------------------->	100 - it is an address of this
+		|			 |     object
+		|			 |
+		100 <----+               +--------------+
+			 | "value" of person1		|
+		person1<-+				|
+							|
+			   changePersonalDetails(Person x)
+
+
+
+
+
+
+
+
 
 
 
