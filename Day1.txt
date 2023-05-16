@@ -278,11 +278,70 @@ passed by value
 passed by address
 passed by reference
 
+		tantra	"man"tra	yantra
+		|	|		|
+	technology	YOU		computer
 
 
+What is a Class		vs		What is an object
+	|				|
+bluepring of an "object"		instance of a "class"
+design of your object			in the computer memory
+its a vision of your object		with data + functions
+imagination of your object
+
+it is simple text file
+named as .java file
+	LOGICAL				PHYSICAL
+design of a house			actual house
 
 
+		what is an object in real time world
+				|
+		"physical state + behaviour"
+		
+		cat = weight, color, breed, age
+				void meow() { }
+				void snooze() { }
+				void chaseMice() { }
+				void drinkMilk() { }
 
+
+		car = weight, color, type, age
+			numberPlate, model, kmsDriven
+			numberOfGears, turningRadius
+			engineCapacity, currentGear
+			..
+			void changeGear() { }
+			void turnLeft(){ }
+			void turnRight() { }
+			void driveAhead() { }
+			void driveReverse() { }
+			void start(){ }
+			void stop() { }
+			void accelerate() { }
+			void pressTheClutch() { }
+
+		----------------------------
+
+				accountNumber
+				accountType
+				accountHolderName
+				accountHolderPhoneNumber
+				accountHolderAddress
+	bank account object1 =   accountBalance + withdraw() { logic }
+					deposit() { logic }
+
+	bank account object2 =   accountBalance + withdraw() { logic }
+					deposit() { logic }
+	bank account object3 =   accountBalance + withdraw() { logic }
+					deposit() { logic }
+	bank account object4 =   accountBalance + withdraw() { logic }
+					deposit() { logic }
+	...
+	..
+	..
+	..	10000000
 
 
 
@@ -439,6 +498,254 @@ long  8
 		6 = 64
 		7 = 128
 		8 = 256
+
+
+
+
+
+class Account
+{
+	FIELD
+	+
+	METHODS (behaviour/functions/activity/process)
+}
+
+class Account
+{
+	int accountNumber;
+	String accountHolderName;
+	double accountBalance;
+
+	void setAccount(int x, String y, double z)
+	{
+		accountNumber=x;
+		accountHolderName=y;
+		accountBalance=z;
+	}	
+	
+}
+
+accObj1.setAccount();
+accObj2.setAccount();
+accObj3.setAccount();
+
+		allocator
+		   |
+Account accObj1 = new Account();
+Account accObj2 = new Account();
+Account accObj3 = new Account();
+	 |		    |	
+	just a reference   constructor 
+	to the object
+
+	STACK				HEAP
+----------------------------------------------------------
+			accountNumber accountHolder accountBalance
+			-------------------------------------------------
+			|	     |		   |			|
+			-------------------------------------------------
+            +----------->100
+	    |
+	+---|---+
+	|100	|
+	+-------+
+	accObj1			
+				METHOD AREA
+				----------------
+				setAccount()
+
+
+			accountNumber accountHolder accountBalance
+			-------------------------------------------------
+			|	     |		   |			|
+			-------------------------------------------------
+            +----------->200
+	    |
+	+---|---+
+	|200	|
+	+-------+
+	accObj2
+
+
+			accountNumber accountHolder accountBalance
+			-------------------------------------------------
+			|	     |		   |			|
+			-------------------------------------------------
+            +----------->300
+	    |
+	+---|---+
+	|300	|
+	+-------+
+	accObj3
+
+
+
+OOPS Concepts
+-------------------
+1. Abstraction
+	- it is the "what is?" part of an object
+	- hiding the details of an object
+		eg. "What is an ATM?"
+			dispense cash/avail cash
+
+		- it hides the complexity of an object
+
+2. Encapsulation
+	- it is the "how is it?" part of an object
+	- coding of that object
+		eg. how is it ATM?
+
+3. Polymorhpism
+
+	- ability of a "business entity" to have many forms
+
+	1. function overloading
+		- we can define a same function as many times
+		as we want provided
+		a) it differ in type of argument
+		b) number of arguments
+		c) sequence of type of arguments
+
+	2. class extension
+	3. operator overloading
+
+		- ability of an operator to appear with
+		different expressions
+
+
+
+
+	
+4. Inheritance
+5. Object communication
+
+
+
+
+
+
+
+
+
+
+
+
+
+java 1.0
+java 2.0
+java 3.0
+java 4.0
+java 5.0
+java 6.0
+java 1.8
+
+
+Class Extention
+
+			     Account <--- generalization
+			        | acno,name,bal
+				| withdraw(),deposit()
+		------------------------------------
+		|		|		|
+	SavingsAcount	CurrentAccount	CreditAccount <--specialization
+	 roi |			odl		crL,cashL
+	------------
+	|
+FixedDepositAccount
+
+			Doctor
+			|
+		--------------------------------
+		|
+		Surgeon
+		|
+	-----------------------------------------
+	|		|		|
+   NeuroSurgeon		HeartSurgeon	OrthoSurgeon
+
+
+		T	E	A	R
+		|	|	|	|
+	   invisible	emotion action	result
+	faster than	|
+	light
+	non-linear
+		
+ 4. Inheritance
+	|
+	ability of a "business entity" to "acquire properties"
+	from "existing business entities"
+
+	a) single level
+
+		A - A is not giving it to B
+		|
+		B <-- B is acquiring from A
+
+		class A extends Object
+		{
+
+		}
+
+		class B extends A {
+
+		}
+
+		Point
+		|
+		Point3D
+	
+
+	b) multi level
+		A
+		|
+		B
+		|
+		C
+
+		Point
+		|
+		Point3D
+		|
+		ColouredPoint3D
+
+
+		class C extends B {
+	
+		}
+
+	c) multiple level
+
+		    D
+		    |foo(){}
+		---------
+		|	|
+		A	B
+		|far()	|far();
+		---------
+		    |
+		    C
+
+		class A {		interface B {} interface X { }
+		}			
+
+		class C extends A implements B,X {
+
+		}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
