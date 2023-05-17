@@ -1004,9 +1004,18 @@ abstract	NA		    partial contract	class cannot be
 		then it is a mandate on the immediate 
 		non-abstract child class to implement these methods
 
+
+
+abstract 		interface
+ - partial		 - pure partial
+
+SunLight		Light
+MoonLight
+TubeLight
+CandleLight
 	
-				MusicalInstrument
-					|play();
+				MusicalInstrument								MedicalInstrument
+					|play();									|
 	-----------------------------------------------------------------
 	|				|			|
 StringBasedMusicalInstrument	AirBasedMusicalInstrument	DrumBasedMusicalInstrument
@@ -1018,7 +1027,169 @@ StringBasedMusicalInstrument	AirBasedMusicalInstrument	DrumBasedMusicalInstrumen
 ElectronicGuitar   Cello	 	
 	
 
+interfaces
+------------------
 
+
+	- pure abstract class
+	- cannot have non-abstract methods
+	
+
+	class A
+	{	
+	}
+	interface B
+	{
+	}
+	interface C
+	{
+	}
+
+	class D extends A implements B,C
+	{
+	}
+
+	A		B	C
+	|extends	|	|
+	------------------------------
+		|implements
+		D
+
+
+
+
+	
+	Sun 
+
+
+	Readable r = new Book();
+	r.read();
+
+	r = new TVScreen();
+	r.read();
+
+	r = new MobileScreen();
+	r.read();
+
+	interface Readable
+	{
+		void read();
+	}
+
+	class TVScreen implements Readable
+	{
+		void read() { }
+	}
+
+	class Book implemnts Readable
+	{
+		void read() { }
+	}
+
+	class MobileScreen implements Readable
+	{
+		void read() { }
+	}
+
+
+
+
+Death of a Diamond
+---------------------
+		Dreaded diamong
+
+
+			Animal
+                          +
+			 / \
+			/   \
+		Bird   <     > Mammal
+		 	\   /
+			 \ /
+			  +
+			 Bat
+
+
+		class Animal
+		{
+			void breathing() { }
+		}
+
+class Bird virtual extends Animal	class Mammal virtual extends Animal
+{				{
+	void fly() { }			void giveBirth() { }
+	void layEggs() { }			
+}				}
+
+	class Bat extends Bird,Mammal {
+		
+	}
+
+	Bird::breathing()
+	Mammal::breathing()
+
+	Bat b = new Bat();
+	b.breathing();
+
+
+		Inheritance is of two types
+				|
+		------------------------------------
+		|				|
+	derivation			implementation
+	|				(abstract/interfaces)
+	|
+	|				interface D { }
+	|				interface C { }
+	class A				class A implements D
+	{				{
+	}				}
+	class B extends A		class B extends A implements C
+	{				{
+	}				}
+			
+
+
+	abstract class D		interface D
+	{				{
+	  abstract void fun();		 	void fun();
+	  void far() { }			void far() { }
+	}				}
+
+
+			Game
+
+	  InDoorGame		OutDoorGame
+		|		   |
+	---------------		-------------
+	|			|
+	Chess			Cricket
+
+
+
+	Drinkable
+
+	Iterative
+
+	Operative
+	
+	The fundamental unit of JPL is a class
+	The fundamental unit of OOPS is a type - interfaces
+
+
+			LivingBeing
+				|
+		----------------------------------
+			|		|
+			Animal		Tree
+			|		|
+		-----------------
+		|	
+		Bird
+		|
+	---------------------
+	|		|
+	FlyingBird	NonFlyingBird
 
 
 
