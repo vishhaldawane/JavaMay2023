@@ -853,6 +853,172 @@ FixedDepositAccount
 
 
 
+		why		what 		how
+
+	class Cashier
+	{
+		float cashAtHand; //500000
+
+		float dispenseTheCash(float cashDispensed,SavingsAccount x) //proxy for sa1
+		{
+			x.withdraw(cashDispensed); //5000
+			cashAtHand=cashAtHand-cashDispensed;
+			return cashAtHand;
+		}
+	
+	}
+
+
+
+
+
+	class SavingsAccount
+	{
+		void withdraw(float amt) {
+
+		}
+	}
+
+	class MainTest
+	{
+		main()
+		{
+			SavingsAccount sa1 = new SavingsAccount();
+			SavingsAccount sa2 = new SavingsAccount();
+			SavingsAccount sa3 = new SavingsAccount();
+			SavingsAccount sa4 = new SavingsAccount();
+			SavingsAccount sa5 = new SavingsAccount();
+			SavingsAccount sa6 = new SavingsAccount();
+
+			Cashier cashier = new Cashier();
+			cashier.dispenseTheCash(5000.0f,sa1);
+			cashier.dispenseTheCash(6000.0f,sa2);
+			cashier.dispenseTheCash(7000.0f,sa3);
+			cashier.dispenseTheCash(8000.0f,sa4);
+			cashier.dispenseTheCash(9000.0f,sa5);
+			cashier.dispenseTheCash(0000.0f,sa6);
+
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+		"Sachin Tendulkar"
+
+	class Cricketer
+	{
+		int playerRank;
+		String playerName;
+		int age;
+		int totalRunsMade;
+
+		void hitSixer() {
+
+		}
+		void hitFourRuns() { //verb
+
+		}
+	}
+
+	class Singer
+	{
+		String singerName;
+		int totalSongsSung;
+
+		Song singASong(Lyrics l, Music m) {
+	
+		}		
+	}
+
+	class MusicStudio
+	{
+
+
+		Album recordAlbum(Singer singer) {
+			Song s1 = signer.singASong();
+			Song s2 = signer.singASong();
+			Song s3 = signer.singASong();
+	
+		}
+
+	}
+
+	Cricketer cricketer1 = new Cricketer();
+	cricketer1.playerName="Sachin Tendulkar";
+
+
+	Cricketer cricketer2 = new Cricketer();
+	cricketer2.playerName="Mahendra Singh Dhoni";
+
+
+
+
+	hasA relation - composition
+
+
+	class Heart
+	{
+		void pump() {
+			
+		}
+	}
+
+
+--------------------------------------------------------------
+
+
+			field		method		class
+--------------------------------------------------------------
+static		shared across		to refer
+		all the instances	other static
+		of the class,		members, data
+					or functions
+		class's members
+
+		they are not
+		object's members
+--------------------------------------------------------------
+final		it is a constant	cannot be	cannot 
+		data, PI=3.14		overriden	be subclassed/extended
+--------------------------------------------------------------
+abstract	NA		    partial contract	class cannot be
+				    of a class		instantiated
+				  (method/function
+				   without body)
+--------------------------------------------------------------
+
+
+	abstract class meant for inheritance
+	
+	- it may/may not have abstract methods
+
+	- if it has abstract methods
+		then it is a mandate on the immediate 
+		non-abstract child class to implement these methods
+
+	
+				MusicalInstrument
+					|play();
+	-----------------------------------------------------------------
+	|				|			|
+StringBasedMusicalInstrument	AirBasedMusicalInstrument	DrumBasedMusicalInstrument
+	|tuneString();			|blowAir();			|tuneSurface();
+-------------------------	--------------------------	------------------------
+	|	   |		|	   |	    |		|	|	|
+	Guitar	 Violin		Flute    SaxoPhone Shehnai	Dhol	Tabla	Duff
+	|pluck();   |bowing();	|								
+ElectronicGuitar   Cello	 	
+	
+
+
 
 
 
