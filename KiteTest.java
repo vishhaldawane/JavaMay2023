@@ -1,6 +1,8 @@
 
 public class KiteTest {
 	public static void main(String[] args) {
+		System.out.println("days : "+Days.monday);
+		
 		Kite.showKiteCount();
 		
 		Kite kite1  = new Kite("Jack","Red",50);
@@ -20,6 +22,10 @@ public class KiteTest {
 	}
 }
 
+enum Days {
+	sunday,monday,tuesday,wednesday,thursday,friday,saturday
+	
+}
 class Kite
 {
 	String owner; //global
