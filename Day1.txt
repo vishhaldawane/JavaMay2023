@@ -1197,6 +1197,175 @@ class Bird virtual extends Animal	class Mammal virtual extends Animal
 
 
 
+class A
+{
+  int i;
+   void foo() {  
+      B b = new B();
+      b.fun(2002);
+      b.j=20;
+   }
+}
+
+class B 
+{
+   int j;
+
+   A a = new A();
+   void fun(int x) {
+      
+      a.i=10;
+      x=100;
+   }
+   void far() {
+
+   }
+}
+class C
+{
+   main() 
+   {
+	A a = new A();	
+	a.foo();
+	MyMath    m = new MyMath();
+	int sum = m.add(5,6);
+   }
+
+}
+class MyMath
+{
+    Lassi add(Curd i, Sugar j)
+    {
+	int k= i+j;
+	return k;
+    }
+}
+--------------------------------
+
+
+	Packages 	= Simlar to operating system directories
+	|		  or folders
+	|			|
+	|			to organize the files/subfolders
+organize the classes
+
+			java  <-- main package
+			|
+		------------------------------------------
+		|	|	|	 |	|	 |
+		lang	awt	util	 net	jdbc	 io <-- sub-packages/folders
+		|	|	 |	   |	   |	  |
+		System Frame	Collection Socket  Driver File
+		Object Button   List		   ResultSet FileInputStream
+		       Window   LinkedList
+		       Checkbox
+		
+
+			jungle <-- main package
+			 |
+		--------------------------------
+		|	 |	|	|
+		cave	tree	river	house <-- sub packages
+		|	|	 |	   |
+		Tiger  Parrot	Turtle    FarmHouse
+		Lion   Monkey   Fish
+
+
+Tiger.java
+---------------
+package jungle.cave;
+class Tiger
+{
+}
+--------------
+
+Lion.java
+---------------
+package jungle.cave;
+class Lion
+{
+}
+--------------
+	static final abstract - qualifiers
+
+	Access specifiers
+
+		1.         <---- default/same package/within the default package
+		2. private <-- accessible within the class 
+		3. protected <-- accessible/referred by the child/or same package  
+		4. public  <-- accessible to the whole internet
+
+
+----------------------------------------------------------
+Exception 
+Multithreading
+Collections
+Frames/Graphics
+
+
+Exception Handling
+-------------------
+
+		run-time error = exception
+
+			Errors
+			|
+	------------------------------------------
+	|	 |	 |	   |	  | 	
+	syntax	linker  runtime	fatal   logical
+	|        |	  |	    |	    |	
+   compile   missing	 Exception crash    4+4=16
+	     libraries
+
+
+	traditional			new approach - try catch
+	|				|
+	if and else 			try..catch..finally
+	ladder
+
+
+
+
+
+			Throwable
+			  |
+		----------------------------
+		|		|
+		Error		Exception	catch
+		|		|
+	VirtualMachineError	| - checked
+	ThreadDeath		|
+		---------------------------------
+		|			|	| 
+	RuntimeException	    IOException SQLException
+		|"unChecked"		|
+		|		--------------------
+		|		|
+		|	 FileNotFoundException
+		|
+	-------------------------------------------------
+	|	     |		|		|
+NullPointerException |	ArithmeticException  NumberFormatException
+	  IndexOutOfBoundsException
+			|
+	---------------------------------------
+	|			  |
+StringIndexOutOfBoundsException ArrayIndexOutOfBoundsException
+	
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
 
 
 
