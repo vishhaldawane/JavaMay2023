@@ -1,20 +1,25 @@
+import java.util.Scanner;
 
 public class DogAgeTest {
 	public static void main(String[] args) {
 		System.out.println("Main begins");
-		
+			
+		do {
 			try {
-				Dog d1 = new Dog("Tommy",12);
-				Dog d2 = new Dog("Tommy",-12);
-				Dog d3 = new Dog("Tommy",2);
+				System.out.println("Enter age : ");
+				Scanner scan = new Scanner(System.in);
+				int age = scan.nextInt();
+				Dog d1 = new Dog("Tommy",age);
 				System.out.println("d1 "+d1);
-				System.out.println("d2 "+d2);
-				System.out.println("d3 "+d3);
+				if(d1 !=null) {
+					break;
+				}
 			}
 			catch(RuntimeException e) {
 				System.out.println(e);
 			}
 			
+		} while(true);	
 			
 		System.out.println("Main Ends");
 	}
