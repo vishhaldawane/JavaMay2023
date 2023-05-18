@@ -1,0 +1,21 @@
+sqlplus / as sysdba
+
+alter session set container=xepdb1;
+
+create user jack1 identified by tiger container=current;
+
+ grant resource, create session to jack1 container=current;
+
+
+make entry into tnsnames
+
+C:\app\PC-28\product\18.0.0\dbhomeXE\network\admin
+
+XEP =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = your desktop name)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME =xepdb1)
+    )
+  )
