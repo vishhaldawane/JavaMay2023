@@ -1,12 +1,14 @@
-SQL> alter session set container=xepdb1;
+alter session set "_ORACLE_SCRIPT"=true;
 
 Session altered.
 
-SQL> alter pluggable database xepdb1 open;
-alter pluggable database xepdb1 open
-
-SQL> create user jacky identified by tiger3;
+SQL> create user your_user_name identified by your_password;
 
 User created.
 
-SQL> grant all privileges to jacky;
+SQL> grant dba to your_user_name;
+
+Grant succeeded.
+
+SQL> conn your_user_name/your_password;
+Connected.
