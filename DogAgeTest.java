@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+import myexceptions.DogAgeExceededException;
+import myexceptions.DogAgeNegativeException;
+
 public class DogAgeTest {
 	public static void main(String[] args) {
 		System.out.println("Main begins");
@@ -15,8 +18,14 @@ public class DogAgeTest {
 					break;
 				}
 			}
-			catch(RuntimeException e) {
-				System.out.println(e);
+			/*catch(RuntimeException e) {
+			  System.out.println("Problem : "+e.getMessage());
+			}*/
+			catch(DogAgeExceededException e) {
+				System.out.println("Problem 1: "+e.getMessage());
+			}
+			catch(DogAgeNegativeException e) {
+				System.out.println("Problem 2: "+e.getMessage());
 			}
 			
 		} while(true);	
@@ -36,10 +45,12 @@ class Dog
 		System.out.println("\tsetting the age");
 		
 		if(age>14) {
-			throw new RuntimeException("Dogs age cannot exceed 14 years");
+			//throw new RuntimeException("Dogs age cannot exceed 14 years");
+			throw new DogAgeExceededException("Dogs age cannot exceed 14 years");
 		}
 		else if ( age <=0 ) {
-			throw new RuntimeException("Dogs age cannot be ZERO or negative");
+			//throw new DogAgeNegativeException("Dogs age cannot be ZERO or negative");
+			throw new DogAgeNegativeException("Dogs age cannot be ZERO or negative");
 		}
 		else
 			this.age = age;
