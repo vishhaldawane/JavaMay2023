@@ -1,0 +1,12 @@
+SQL> alter session set container=xepdb1;
+
+Session altered.
+
+SQL> alter pluggable database xepdb1 open;
+alter pluggable database xepdb1 open
+
+SQL> create user jacky identified by tiger3;
+
+User created.
+
+SQL> grant all privileges to jacky;
