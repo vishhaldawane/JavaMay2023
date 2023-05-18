@@ -1333,12 +1333,12 @@ Exception Handling
 		|		|
 		Error		Exception	catch
 		|		|
-	VirtualMachineError	| - checked
+	VirtualMachineError	| - checked by the compiler
 	ThreadDeath		|
 		---------------------------------
 		|			|	| 
 	RuntimeException	    IOException SQLException
-		|"unChecked"		|
+		|"unChecked" by the compiler |
 		|		--------------------
 		|		|
 		|	 FileNotFoundException
@@ -1360,9 +1360,108 @@ StringIndexOutOfBoundsException ArrayIndexOutOfBoundsException
 
 
 	
+	Car
+		shortDrive()		longDrive()
+		|			|
+		OverSpeedException	OverSpeedException
+					FuelException	
+					DocumentException
+						TyrePressureException
+	
+
+	1 - DB			TABLE(s)	
+	2 - POJO		Account Payee Applicant Transfer Statement
+	3 - REPO - DAO		AccountDAO, PayeeDAO, ApplicantDAO
+-----------------------------------------------------
+	4 - SERVICE - FundTransferService
+	5 - CONTROLLER - spring
+	6 - UI - GUI - 	 ANGULAR
+				
+
+							
 
 
 
+
+
+		Collection Framework
+		 
+		
+		Component's Orthogonal Space
+
+
+			X
+			| Data Type --- ButterMilk
+		       / \		Paneer Chilly	
+		      /   \		Pickle
+		     /     \		FriedRice
+		    /       \		 - Book
+	 	   /	     \
+		  Y	I     Z
+	 Container|	|     |Algorithm
+	  |	    Iterator       |
+         Glass          |          |
+	 Plate	      Straw	  drink()
+	 SmallPlate   Fork	  eat()
+		      Finger	  lick()
+		      Spoon	  	
+	   []	    for loop	 just print
+				sorting/searching/compacting
+				
+
+			Iterable
+			  |
+			Collection	<-------------	Map
+			  |				 |K,V
+		---------------------------	  ----------------
+		|			|	  |		|
+		List			Set	TreeMap		HashMap
+		|duplicates		|unique
+	-------------------	-------------------------
+	|		|	|		|	
+	ArrayList  LinkedList	TreeSet	     HashSet
+	|		|	 |		  |hash table
+	PhoneLog  PhoneContact	 ChemicalElements Book
+	
+
+
+	
+			1
+			|
+		----------------------
+		|		|
+				2
+				|
+			     -------------
+			     |		|
+					8
+ 					|
+				-------------------
+						|
+						14
+
+		LDR
+			2
+			|
+		----------------------
+		|		|
+		1		8
+				|
+			     -------------
+			     |		|
+			     3		14
+
+
+		Map = dictionary = key and value pair
+		|
+	-------------------------
+	|		|
+	TreeMap		HashMap
+	K,  V
+	|   |
+	red black
+
+	vishalviniing@gmail.com
 
 
 
