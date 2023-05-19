@@ -1463,6 +1463,87 @@ StringIndexOutOfBoundsException ArrayIndexOutOfBoundsException
 
 	vishalviniing@gmail.com
 
+JDBC
+------
+java.sql package 
+
+		Java Database Connectivity
+
+
+	FrontEnd			BackEnd
+	|				|
+	Java	--------> Driver <--- Database [ oracle/hsqldb ]
+	|		    |		|
+	Appliation logic    |		Data logic
+			    |
+			    |		Tables/procedures/functions
+			    |
+  hsqldb.jar -->	org.hsqldb.jdbc.JDBCDriver
+
+		1. Know the database [ hsqldb ]
+		2. Know the driver
+			org.hsqldb.jdbc.JDBCDriver			
+		3. Register this driver
+			DriverManager.registerDriver(new org.hsqldb.jdbc.JDBCDriver())
+		4. Connect to the database
+			Connection conn = DriverManager.getConnection(dsn,username,password);
+		5. Make the desired Statement
+			Statement st = conn.createStatement();
+		6. Execute the Statement AND Acquire the Result
+			ResultSet rs = st.executeQuery("SELECT * FROM DEPT");
+		7. Process the result
+		8. close the result, close the statement,
+			close the connection
+	
+
+
+following diagram is NOT of inheritance
+
+ORALCE DRIVER
+C:\app\PC-26\product\18.0.0\dbhomeXE\jdbc\lib\ojdbc8.jar
+					oracle.jdbc.OracleDriver
+
+			Driver
+			| org.hsqldb.jdbc.JDBCDriver
+		 DriverManager
+			| DriverManager.registerDriver(.)
+			| DriverManager.getConnection(...)
+			Connection
+			| conn.createStatement();
+			| conn.prepareStatement();
+			| conn.prepareCallableStatement();
+	-----------------------------------------------
+	|		|			|	
+	Statement	PreparedStatement	CallableStatement
+	SELECT		INSERT/UPDATE/DELETE	Procedure/function
+
+
+
+
+create table dept
+(
+   deptno int primary key,
+   dname varchar(20),
+   loc varchar(20)
+);
+INSERT INTO DEPT VALUES ( 10, 'IT','Mumbai' );
+INSERT INTO DEPT VALUES ( 20, 'SALES','New York' );
+INSERT INTO DEPT VALUES ( 30, 'PURCHASE','Delhi' );
+INSERT INTO DEPT VALUES ( 40, 'QMS','Pune' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
