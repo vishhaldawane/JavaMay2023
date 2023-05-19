@@ -2,13 +2,14 @@ alter session set "_ORACLE_SCRIPT"=true;
 
 Session altered.
 
-SQL> create user your_user_name identified by your_password;
+SQL> create user your_user_name identified by your_password container=all;
 
 User created.
 
-SQL> grant dba to your_user_name;
+SQL> grant create session,resource to your_user_name;
+SQL> grant unlimited tablespace to your_user_name;
 
 Grant succeeded.
 
-SQL> conn your_user_name/your_password;
+SQL> conn your_user_name/your_password@XE;
 Connected.
