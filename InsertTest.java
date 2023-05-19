@@ -30,9 +30,23 @@ public class InsertTest {
 			conn.setAutoCommit(false); //TRANSACTION can be started
 			
 			PreparedStatement pst = conn.prepareStatement("INSERT INTO DEPT VALUES (?,?,?)");
-			pst.setInt(1, 70);
-			pst.setString(2, "OPS");
-			pst.setString(3, "Kolkatta");
+			
+			Scanner scanner1 = new Scanner(System.in);
+			Scanner scanner2 = new Scanner(System.in);
+			Scanner scanner3 = new Scanner(System.in);
+			
+			System.out.println("Enter new deptno : ");
+			int newDeptno  = scanner1.nextInt();
+			
+			System.out.println("Enter new dept name : ");
+			String newDeptName  = scanner2.nextLine();
+			
+			System.out.println("Enter new dept location : ");
+			String newDeptLoc  = scanner3.nextLine();
+			
+			pst.setInt(1, newDeptno);
+			pst.setString(2, newDeptName);
+			pst.setString(3, newDeptLoc);
 			
 			System.out.println("PreparedStatement created....");
 
