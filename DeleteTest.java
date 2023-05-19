@@ -1,11 +1,16 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
+import java.util.Scanner;
+
+import com.myexceptions.DepartmentAlreadyExistsException;
  //java.beans.Statement
 
-public class SelectTest {
+public class DeleteTest {
 	public static void main(String[] args) {
 		try {
 			System.out.println("Trying to load the Driver ....");
@@ -25,29 +30,43 @@ public class SelectTest {
 							+ "@localhost:1521:XE","scott","tiger");
 			System.out.println("Connected to the DB :"+conn);
 			
+			conn.setAutoCommit(false); //TRANSACTION can be started
 			
-						
-			Statement st = conn.createStatement();
-			System.out.println("Statement created....");
+			PreparedStatement pst = conn.prepareStatement("DELETE FROM DEPT WHERE DEPTNO=?");
 			
-			ResultSet rs = st.executeQuery("SELECT * FROM DEPT");
-			System.out.println("Query fired and got the result..");
+			Scanner scanner1 = new Scanner(System.in);
 			
-			while(rs.next()) {
-				System.out.println("DEPTNO    : "+rs.getInt(1));
-				System.out.println("DEPT NAME : "+rs.getString(2));
-				System.out.println("DEPT LOC  : "+rs.getString(3));
-				System.out.println("-------------------------");
+			System.out.println("Enter EXISTING deptno to delete : ");
+			int existingDeptno  = scanner1.nextInt();
+			
+			pst.setInt(1, existingDeptno); //set
+			
+			System.out.println("PreparedStatement created....");
+
+			System.out.println("Confirm to delete (yes/no) : ");
+			Scanner scan = new Scanner(System.in);
+			String answer = scan.nextLine();
+			if(answer.equalsIgnoreCase("yes")) {
+				
+				int rows = pst.executeUpdate();
+				conn.commit();
+				System.out.println(rows + " rows deleted...");
+			}
+			else {
+				System.out.println("rows deletion discarded...");
 			}
 			
 			
 			System.out.println("Trying to close the DB connection....");
-			rs.close();
-			st.close();
+			pst.close();
 			conn.close();
 			System.out.println("Disconnected from the DB");
 
-		} catch (SQLException e) {
+		} 
+		catch(SQLIntegrityConstraintViolationException e) {
+			throw new DepartmentAlreadyExistsException("This department already exist!!!");
+		}
+		catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
