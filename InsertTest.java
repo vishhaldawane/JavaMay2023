@@ -3,8 +3,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 import java.util.Scanner;
+
+import com.myexceptions.DepartmentAlreadyExistsException;
  //java.beans.Statement
 
 public class InsertTest {
@@ -54,6 +57,7 @@ public class InsertTest {
 			Scanner scan = new Scanner(System.in);
 			String answer = scan.nextLine();
 			if(answer.equalsIgnoreCase("yes")) {
+				
 				int rows = pst.executeUpdate();
 				conn.commit();
 				System.out.println(rows + " rows inserted...");
@@ -68,7 +72,11 @@ public class InsertTest {
 			conn.close();
 			System.out.println("Disconnected from the DB");
 
-		} catch (SQLException e) {
+		} 
+		catch(SQLIntegrityConstraintViolationException e) {
+			throw new DepartmentAlreadyExistsException("This department already exist!!!");
+		}
+		catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
