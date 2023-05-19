@@ -1,5 +1,4 @@
-
-				who
+Hello				who
 				|??????
 			---------------------
 			|		|
@@ -1511,7 +1510,7 @@ C:\app\PC-26\product\18.0.0\dbhomeXE\jdbc\lib\ojdbc8.jar
 			Connection
 			| conn.createStatement();
 			| conn.prepareStatement();
-			| conn.prepareCallableStatement();
+			| conn.prepareCall();
 	-----------------------------------------------
 	|		|			|	
 	Statement	PreparedStatement	CallableStatement
@@ -1537,6 +1536,92 @@ INSERT INTO DEPT VALUES ( 40, 'QMS','Pune' );
 
 
 
+	Spring				ORM f/w
+	|			Hibernate	TopLink
+ ----------------
+  |
+ DI
+
+ @Autowired
+ Employee e;
+
+	one-one
+	one-to-many
+	many-to-one
+	many-to-many
+
+dept		emp	customer	order	item	
+
+		product		price
+
+
+-------------------------------------------------
+Department	Employee
+
+ResultSet	rs1  rs2  rs3  rs4
+
+
+
+		Maven
+
+
+	Machine1	Machine2		Machine3
+	|		|			|
+					mavenproject
+						|
+						pom.xml
+						|dependencies
+						|to be decalred
+						| int xml tags
+						|1. local
+						|2. global n/w
+						|3. maven central
+			|
+	home/Laptop	TCS/machine		SBI/machine
+	java 11		java 15			java17
+	hsqldb		mysql			oracle21
+	..		..			apache10
+	..		...			.
+	|		|			|
+	coding		coding			coding
+	
+
+	1. DB
+	2. POJO
+	3. REPO/DAO
+----------------------------------------
+	4. SERVICE - business logic is here
+	|
+	5. CONTROLLER - SECURITY
+	6. UI
+
+
+
+		Gang Of Four - Eric Gamma
+
+	DAO design pattern [ 23 design pattern ]
+
+	-------------------------
+		Data Access Object
+		 - hide the low level db coding
+
+
+					Kitchen
+					| chef(s)
+					| 1   DB	
+					| 2   Pojo
+					| 3 - DAO  
+----------------------------------[		]
+
+							[ UI  ]
+		4 [ service ]				   |6
+[spoons	][ wada	][ idli	][ sambar ]	[ controller ] 5   |
+		|				|	   |	
+						Customer---+
+
+				Masala Dosa [ 50]
+
+		
 
 
 
@@ -1545,8 +1630,296 @@ INSERT INTO DEPT VALUES ( 40, 'QMS','Pune' );
 
 
 
+PlainOLdJava
+Object		
+	POJO	POJI		POJI_Impl
+	|	 |		 |
+ Department	DepartmentDAO	DepartmentDAOImpl
 
 
+-----------------------------------------------------------------
+
+Venkat
+Shailesh
+Ankit
+Amol
+Nanda
+5 - BankApplicant - 
+	User would apply for the bank account
+	Admin would reject/approve the bank account
+------------------------------------
+Govind
+Naveen
+Kapil
+Sreedhar
+Chellakumar
+Pradeep
+6 - AccountDashBoard
+	user can see the balance and the profile
+
+----------------------------------------
+Vrushali
+Irfana
+Mayank
+Niraj
+Rishi
+5 - PayeeManagment
+	user should add a new payee
+	user should view a particular payee
+	user should view all the payees
+	user should delete a particular payee
+
+Nitin
+Haraprasad
+Ronak
+Abhishek
+Pritam
+Abhijeet
+6 - Transfer/Statement
+	
+ 1  create or replace procedure GetEmployeeDetails(v_eno IN number, v_ename OUT varchar, v_ejob OUT varchar)
+  2  as
+  3    BEGIN
+  4     SELECT ENAME,JOB INTO v_ename,v_ejob from emp where empno=v_eno;
+  5     EXCEPTION when no_data_found then
+  6             v_ename:=null;
+  7             v_ejob:=null;
+  8*   END;
+SQL> /
+
+set serveroutput on;
+SQL> declare
+  2     x varchar2(20);
+  3     y varchar2(20);
+  4  begin
+  5      GetEmployeeDetails(&num,x,y);
+  6      dbms_output.put_line('empname : '||x);
+  7      dbms_output.put_line('empjob  : '||y);
+  8  end;
+  9  /
+
+
+
+
+
+
+====================================================
+
+	Multhithreading
+	----------------
+		
+
+	
+
+	t1	t2 	t3
+	|	
+	public void synchronized depsoit() {
+		
+	}
+		
+
+
+
+					Runnable		Vehicle
+					| run();		  |	
+					|			  |	
+					------------------------- |
+					|	     implements	| |extends
+					Thread			Car
+					|
+					|start() { } ---> JVM's Thread scheduler
+					|				|
+					| run() { } <-------------------+
+					|
+			------------------------------
+			|
+			Message
+			run() { }
+
+
+	Thread = series of statements
+
+	Accounts master
+	---------------------------
+	101 Suresh 70000 -> book mark  t3 
+	102 Dinesh 60000
+	103 Ritesh 80000
+	..
+	105
+	106
+	119
+	201
+
+					Cash Deposit Counter
+	
+			1..10000	10001-20001	20001-30000
+			Teller1		Teller2		Teller3
+			|		|		|
+			getBalance();	getBalance();	getBalance();
+			|		|		|
+			calcAmt();	calcAmt();	calcAmt();
+			|		|		|
+			setBalance();	setBalance();	setBalance();
+			|		|		|
+			Customer1	Customer2	Customer3
+	a/c : 		101		101		101
+	time:		10.30am		10.30am		10.30am
+	cash:		5000/-		7000/-		8000/-
+	deno: 		500Rs 		100Rs		2000Rs
+	cnt : 		10 notes	70 notes	4
+
+
+	Paper Pen	
+		multithreading | mutliprocessing
+
+		right hand : make 6 on the paper - anticlock
+		right leg  : make circle on the ground - clockwise
+
+
+	
+	import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+public class FileHandlingTest {
+	public static void main(String[] args) {
+		try {
+			System.out.println("Trying to open the file....");
+			FileInputStream fin = new FileInputStream("/Users/apple/empty.txt");
+			System.out.println("File is open...");
+			
+			byte b = (byte) fin.read(); //A bhishek - read 1st letter, ie A
+			
+			System.out.println("[");
+			while(b!=-1) { // -1 means EOF
+				System.out.print((char)b);
+				b = (byte) fin.read(); // read successive letters from pos 2
+				Thread.sleep(10); //pause 100 ms
+			}
+			System.out.println("]");
+
+			System.out.println("Trying to close the file....");
+			fin.close();
+			System.out.println("File is closed....");
+			
+		} catch (FileNotFoundException e) {
+			System.out.println("Problem1 : "+e);
+		} catch (IOException e) {
+			System.out.println("Problem2 : "+e);
+		} catch (InterruptedException e) {
+			System.out.println("Problem3 : "+e);
+		}
+		
+	
+	}
+}
+
+/*
+
+
+package = java.io
+
+	stadard input									standard output 
+	device											device
+	|													|
+	System.in				System.out							System.out
+	|													|
+	|													|
+	|		Your Java Program				|
+	|			|							|
+	+-->->input-->-->-->data + functions -->->output->->+
+				 ||
+				 ||
+			incoming || outgoing
+			---------------------
+			|	|	|
+			HDD	RAM	NETWORK
+			|
+			FILE
+						
+						
+			input - read
+			output - write
+			
+						
+java.io - all method throws IOException
+						
+==============================================================================												
+	BYTE BASED STREAM		||	CHARACTER BASED STREAM
+		|			||	|				
+		ASCII			||	UNICODE
+		1 byte = 256		||	1 char = 2 bytes = 65535
+=================================================================================	
+InputStream     | OutputStream	    	|| 	  Reader         |  Writer
+  read();       |   write();		||		read();	 |   write();
+-----------------------------------------------------------------------------
+FileInputStream | FileOutputStream  	||  FileReader		 | FileWriter
+-----------------------------------------------------------------------------				
+						
+						
+			AMIT							AMIT
+			1111							2222
+				
+						
+			65
+			
+	BYTE BASED		- ASCII
+		<--65-->   <--77---> <---73 -->	<---84-->
+		0100 0001  0100 1101  0100 1001 0101 0100  
+		A		   M          I	        T
+			
+	CHARACTER BASED		
+		<-------------65-->   <-----------77--->  <-----------73 ---> <--------84------->
+		0000 0000 0100 0001  0000 0000 0100 1101  0000 0000 0100 1001 0000 0000 0101 0100  
+		A		             M                    I	                  T
+
+						
+	A 65
+	B 66
+	C 67
+	D 68
+	E 69
+	F 70
+	G 71
+	H 72
+	I 73
+	J 74
+	K 75
+	L 76
+	M 77
+	N 78
+	O 79
+	P 80
+	Q 81
+	R 82
+	S 83
+	T 84
+			
+
+
+STEPS to create executable JAR file
+----------------------------------------
+
+	1. create the META-INF folder
+			|
+			MANIFEST.MF
+			|
+			Main-Class: FileGUITest
+	
+	2. jar -cvfm myeditor.jar META-INF\MANIFEST.MF FileGUITest.class MyFrame.class
+			|
+			jar to create
+
+		-c create
+		-v verbose
+		-f file
+		-m add the manifest file
+
+	3. java -jar myeditor.jar
+			or double click
+		
+
+						
+	
 
 
 
