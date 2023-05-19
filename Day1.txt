@@ -1917,9 +1917,38 @@ STEPS to create executable JAR file
 	3. java -jar myeditor.jar
 			or double click
 		
+---------------------------------------------
+
+
+Reflection
+---------------
+
+	reflection = meta data of your object
+
+	every instance of an "Object class"
+	got a method called as "getClass()"
+	that returns an instance of "class Class" <--meta-data
+
+	11
+	|
+	hashCode,equals			
+	wait,wait,wait
+	notify,notifyAll
+	toString
+	finalize
+
+	clone (deep cloning/shallow cloning)
+
+	getClass
+
+
+	Employee e1 = new Employee();
+	Employee e2= (Employee) e1.clone();
+
 
 						
 	
+
 
 
 
