@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Scanner;
  //java.beans.Statement
 
 public class InsertTest {
@@ -26,15 +27,27 @@ public class InsertTest {
 							+ "@localhost:1521:XE","scott","tiger");
 			System.out.println("Connected to the DB :"+conn);
 			
+			conn.setAutoCommit(false); //TRANSACTION can be started
+			
 			PreparedStatement pst = conn.prepareStatement("INSERT INTO DEPT VALUES (?,?,?)");
-			pst.setInt(1, 50);
-			pst.setString(2, "DEV");
-			pst.setString(3, "BELAPUR");
+			pst.setInt(1, 70);
+			pst.setString(2, "OPS");
+			pst.setString(3, "Kolkatta");
 			
 			System.out.println("PreparedStatement created....");
+
+			System.out.println("Wish to save (yes/no) : ");
+			Scanner scan = new Scanner(System.in);
+			String answer = scan.nextLine();
+			if(answer.equalsIgnoreCase("yes")) {
+				int rows = pst.executeUpdate();
+				conn.commit();
+				System.out.println(rows + " rows inserted...");
+			}
+			else {
+				System.out.println("rows discarded...");
+			}
 			
-			int rows = pst.executeUpdate();
-			System.out.println(rows + " rows inserted...");
 			
 			System.out.println("Trying to close the DB connection....");
 			pst.close();
