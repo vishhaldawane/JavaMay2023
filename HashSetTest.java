@@ -1,93 +1,6 @@
-
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Objects;
-import java.util.Scanner;
-
-class Book
-{
-	int  bookNumber;
-	String bookName;
-	float bookPrice;
-
-	public Book(int bookNumber) {
-		super();
-		this.bookNumber = bookNumber;
-	}
-
-	public Book(int bookNumber, String bookName, float bookPrice) {
-		super();
-		this.bookNumber = bookNumber;
-		this.bookName = bookName;
-		this.bookPrice = bookPrice;
-	}
-
-	@Override
-	public String toString() {
-		return "Book [bookNumber=" + bookNumber + ", bookName=" + bookName + ", bookPrice=" + bookPrice + "]";
-	}
-	
-	
-
-	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((bookName == null) ? 0 : bookName.hashCode());
-		result = prime * result + bookNumber; //31 * 40 + 101 = 1341 
-		result = prime * result + Float.floatToIntBits(bookPrice); // 31*1341 + 1200 = 42771
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		
-		if (obj == null)
-			return false;
-		
-		if (getClass() != obj.getClass())
-			return false;
-		
-		Book other = (Book) obj;
-		
-		if (bookName == null) {  // b1.equals(b2)
-			if (other.bookName != null)
-				return false;
-	
-		} else if (!bookName.equals(other.bookName))
-			return false;
-		
-		if (bookNumber != other.bookNumber)
-			return false;
-		
-		if (Float.floatToIntBits(bookPrice) != Float.floatToIntBits(other.bookPrice))
-			return false;
-		
-		return true;
-	}
-
-	public int getBookNumber() {
-		return bookNumber;
-	}
-
-	public String getBookName() {
-		return bookName;
-	}
-
-	public float getBookPrice() {
-		return bookPrice;
-	}
-
-	
-
-
-	
-	
-}
-
 
 public class HashSetTest {
 	public static void main(String[] args) {
@@ -130,8 +43,109 @@ public class HashSetTest {
 				break;
 			}*/
 		}
-		/*if(found==false) {
-			System.out.println("Not found..."+number);
-		}*/
 	}
 }
+class Book
+{
+	int  bookNumber;
+	String bookName;
+	float bookPrice;
+
+	public Book(int bookNumber) {
+		super();
+		this.bookNumber = bookNumber;
+	}
+
+	public Book(int bookNumber, String bookName, float bookPrice) {
+		super();
+		this.bookNumber = bookNumber;
+		this.bookName = bookName;
+		this.bookPrice = bookPrice;
+	}
+
+	@Override
+	public String toString() {
+		return "Book [bookNumber=" + bookNumber + ", bookName=" + bookName + ", bookPrice=" + bookPrice + "]";
+	}
+	
+	
+
+	
+	/*@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((bookName == null) ? 0 : bookName.hashCode());
+		result = prime * result + bookNumber;
+					//31 * 1 + 101 = 132
+		
+		result = prime * result + Float.floatToIntBits(bookPrice);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		
+		if (obj == null)
+			return false;
+		
+		if (getClass() != obj.getClass())
+			return false;
+		
+		Book other = (Book) obj;
+		
+		if (bookName == null) {  // b1.equals(b2)
+			if (other.bookName != null)
+				return false;
+	
+		} else if (!bookName.equals(other.bookName))
+			return false;
+		
+		if (bookNumber != other.bookNumber)
+			return false;
+		
+		if (Float.floatToIntBits(bookPrice) != Float.floatToIntBits(other.bookPrice))
+			return false;
+		
+		return true;
+	}*/
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(bookName, bookNumber, bookPrice);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Book other = (Book) obj;
+		return Objects.equals(bookName, other.bookName) && bookNumber == other.bookNumber
+				&& Float.floatToIntBits(bookPrice) == Float.floatToIntBits(other.bookPrice);
+	}
+
+	public int getBookNumber() {
+		return bookNumber;
+	}
+
+	public String getBookName() {
+		return bookName;
+	}
+
+	public float getBookPrice() {
+		return bookPrice;
+	}
+
+	
+
+
+	
+	
+}
+
